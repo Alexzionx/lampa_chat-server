@@ -1,7 +1,7 @@
 # lampa_chat-server
 - [Ru](https://github.com/Alexzionx/lampa_chat-server/blob/main/readmeRU.md)|En
 
-**LampaChat server** it`s self-hosted client-server simple text messenger with registration and database (sqlite3).
+**LampaChat** it`s self-hosted client-server simple text messenger with registration and database (sqlite3).
 
 [LampaChat Client APP](https://github.com/Alexzionx/lampa_chat-client/)
 
