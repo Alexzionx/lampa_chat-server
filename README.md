@@ -19,3 +19,6 @@ Docker volumes retain their content even when the container is stopped, started,
   ```
   java -jar LampaChat_server.jar
   ```
+- ### Configuration
+  At the moment, blocking the registration of new users and changing the ports of the server are available from the settings.
+  All server settings in file /config/options.properties or if you run in docker then in [docker volume](https://docs.docker.com/storage/volumes/) there is a file options.properties, there are instructions for setting up.
