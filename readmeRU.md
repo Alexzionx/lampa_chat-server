@@ -1,5 +1,10 @@
-# lampa_chat-server
-- Ru|[En](https://github.com/Alexzionx/lampa_chat-server/blob/main/README.md)
+<p align="center">
+  <img title="logo" src='https://github.com/Alexzionx/lampa_chat-client/blob/master/assets/images/logo.png?raw=true' />
+</p>
+
+## lampa_chat-server
+
+# - Ru|[En](https://github.com/Alexzionx/lampa_chat-server/blob/main/README.md)
 
 **LampaChat** это простой текстовый мессенджер для размещения на своем собственном сервере, с регистрацией и базой данных (sqlite3).
 
