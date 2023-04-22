@@ -1,5 +1,10 @@
-# lampa_chat-server
-- [Ru](https://github.com/Alexzionx/lampa_chat-server/blob/main/readmeRU.md)|En
+<p align="center">
+  <img title="logo" src='https://github.com/Alexzionx/lampa_chat-client/blob/master/assets/images/logo.png?raw=true' />
+</p>
+
+## lampa_chat-server
+
+# - [Ru](https://github.com/Alexzionx/lampa_chat-server/blob/main/readmeRU.md)|En
 
 **LampaChat** it`s self-hosted client-server simple text messenger with registration and database (sqlite3).
 
