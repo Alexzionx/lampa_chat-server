@@ -27,3 +27,18 @@ Docker volumes retain their content even when the container is stopped, started,
 - ### Configuration
   At the moment, blocking the registration of new users and changing the ports of the server are available from the settings.
   All server settings in file /config/options.properties or if you run in docker then in [docker volume](https://docs.docker.com/storage/volumes/) there is a file options.properties, there are instructions for setting up.
+
+# Public server
+   server adress - **45.141.103.116**
+   
+   port1 - **30305**
+   
+   port2 - **30306**
+  
+  - ### Demo user
+    
+    login - **demo1**
+    
+    pass - **demo**
+  
+  
