@@ -8,7 +8,7 @@
 
 **LampaChat** it`s self-hosted client-server simple text messenger with registration and database (sqlite3).
 
-[LampaChat Client APP](https://github.com/Alexzionx/lampa_chat-client/)
+  [![](https://img.shields.io/github/last-commit/alexzionx/lampa_chat-client?label=LampaChat%20CLIENT)](https://github.com/Alexzionx/lampa_chat-client)
 
 # Getting started
 - ### Docker
