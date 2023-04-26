@@ -8,14 +8,14 @@
 
 **LampaChat** это простой текстовый мессенджер для размещения на своем собственном сервере, с регистрацией и базой данных (sqlite3).
 
-[LampaChat Client APP](https://github.com/Alexzionx/lampa_chat-client/)
+  [![](https://img.shields.io/github/last-commit/alexzionx/lampa_chat-client?label=LampaChat%20CLIENT)](https://github.com/Alexzionx/lampa_chat-client)
 
 # Начало работы
 - ### Docker
 
   LampaChat сервер доступен в docker.
   
-  [![Docker Pulls](https://img.shields.io/docker/image-size/alexzionx/lampa_chat-server/8-0.1?style=for-the-badge)](https://hub.docker.com/r/alexzionx/lampa_chat-server)
+  [![Docker Pulls](https://img.shields.io/docker/image-size/alexzionx/lampa_chat-server/latest?style=for-the-badge)](https://hub.docker.com/r/alexzionx/lampa_chat-server)
   
   После запуска будут автоматичесски созданы DATABASE и CONFIG [docker volume](https://docs.docker.com/storage/volumes/) на вашем хосте.
 Docker volumes (разделы) позволяют сохранить содежимое (настройки, базаданных) после остановки, перезапуска или удаления контейнера.
