@@ -15,7 +15,7 @@
 
   LampaChat server is available in docker.
   
-  [![Docker Pulls](https://img.shields.io/docker/image-size/alexzionx/lampa_chat-server/8-0.1?style=for-the-badge)](https://hub.docker.com/r/alexzionx/lampa_chat-server)
+  [![Docker Pulls](https://img.shields.io/docker/image-size/alexzionx/lampa_chat-server/latest?style=for-the-badge)](https://hub.docker.com/r/alexzionx/lampa_chat-server)
   
   After start automatically created a DATABASE and CONFIG [docker volume](https://docs.docker.com/storage/volumes/) on the host machine.
 Docker volumes retain their content even when the container is stopped, started, or deleted.
