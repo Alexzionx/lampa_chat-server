@@ -24,7 +24,7 @@ public class MessageNotSendedMonitor implements Runnable {
 
     @Override
     public void run() {
-        database db = new database();
+        Database db = new Database();
         userID = db.getUserID(userName);
         Map<String, Long> countMessages = new HashMap<>();
         // for (Long long1 : LampaChat_server.usersOnlinelist) {

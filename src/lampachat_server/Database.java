@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import protocol.Protocol_v1;
 
-public class database extends org.sqlite.JDBC {
+public class Database extends org.sqlite.JDBC {
 
     private static final String DRIVER_NAME = "org.sqlite.JDBC";
     private static final String DATABASE_FILE = "base/database.db";

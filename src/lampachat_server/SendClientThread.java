@@ -51,7 +51,7 @@ public class SendClientThread implements Runnable {
     @Override
     public void run() {
         boolean trig = false;
-        database db = new database();
+        Database db = new Database();
         int tryCount = 10;
         while (tryCount > 0) {
             System.out.print("");

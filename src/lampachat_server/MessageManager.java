@@ -14,7 +14,7 @@ public class MessageManager implements Runnable {
 
     @Override
     public void run() {
-        database db = new database();
+        Database db = new Database();
         while (true) {
             while (!LampaChat_server.bufferArray.isEmpty()) {
                 System.out.println("MessageManager message yes");

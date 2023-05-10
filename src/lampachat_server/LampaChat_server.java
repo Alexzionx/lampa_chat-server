@@ -18,7 +18,7 @@ public class LampaChat_server {
     static List<Long> usersOnlinelist;
     static Map<Long, bufferArray> bufMap;
 
-    public static void main(String[] args) {
+    public void start() {
 
         bufferArray = new ArrayList<>();
         usersOnlinelist = new ArrayList<>();
@@ -27,7 +27,7 @@ public class LampaChat_server {
         opt.createDirectoryStructure();
         opt.readOptions();
         
-        database db = new database();
+        Database db = new Database();
         db.createDefaultTables();
 
         port_in = opt.getPort1();

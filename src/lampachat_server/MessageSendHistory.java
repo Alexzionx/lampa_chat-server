@@ -22,7 +22,7 @@ public class MessageSendHistory implements Runnable {
 
     @Override
     public void run() {
-        database db = new database();
+        Database db = new Database();
         for (int i = 1; i <= db.getFriendCount(userName); i++) {
             String friend = db.getFriendNameByID(userName, i);
             for (int j = 1; j <= db.getCountMessages(userName, friend); j++) {

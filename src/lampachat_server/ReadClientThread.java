@@ -67,7 +67,7 @@ public class ReadClientThread implements Runnable {
 
     @Override
     public void run() {
-        database db = new database();
+        Database db = new Database();
         while (!self.isInterrupted()) {
             System.out.print("");
             try {
