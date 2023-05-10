@@ -10,6 +10,8 @@ import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Options {
 
@@ -34,11 +36,12 @@ public class Options {
                     + "---server_port_2=" + port2 + "\n"
                     + "---");
         } catch (FileNotFoundException ex) {
-            System.out.println("Config file (./config/options.properties) NOT found");
-            System.out.println("Creating default config file \"options.properties\".....");
+            Logger.getLogger(Options.class.getName()).log(Level.INFO, "Config file (./config/options.properties) NOT found");
+            Logger.getLogger(Options.class.getName()).log(Level.INFO, "Creating default config file \"options.properties\".....");
+            Logger.getLogger(Options.class.getName()).log(Level.INFO, ex.getMessage());
             setDefaultConfigFile();
         } catch (IOException ex) {
-            System.out.println(ex);
+            Logger.getLogger(Options.class.getName()).log(Level.INFO, ex.getMessage());
         }
     }
 
@@ -49,14 +52,14 @@ public class Options {
             Files.createDirectory(Paths.get(baseFolder));
         } catch (FileAlreadyExistsException ex) {
         } catch (IOException ex) {
-            System.out.println("Error " + ex);
+            Logger.getLogger(Options.class.getName()).log(Level.INFO, ex.getMessage());
         }
         try {
             String configFolder = "config";
             Files.createDirectory(Paths.get(configFolder));
         } catch (FileAlreadyExistsException ex) {
         } catch (IOException ex) {
-            System.out.println("Error " + ex);
+            Logger.getLogger(Options.class.getName()).log(Level.INFO, ex.getMessage());
         }
     }
 
@@ -79,7 +82,7 @@ public class Options {
             writer.write(str);
             writer.close();
         } catch (IOException ex) {
-            System.out.println("ERROR creating default config file! ");
+            Logger.getLogger(Options.class.getName()).log(Level.INFO, ex.getMessage());
         }
     }
 

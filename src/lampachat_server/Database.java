@@ -11,6 +11,8 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import protocol.Protocol_v1;
 
 public class Database extends org.sqlite.JDBC {
@@ -25,7 +27,7 @@ public class Database extends org.sqlite.JDBC {
         try {
             conn = DriverManager.getConnection(DATABASE_FILESQL);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
         return conn;
     }
@@ -38,7 +40,7 @@ public class Database extends org.sqlite.JDBC {
             stmt.executeUpdate(s);
             // stmt.executeUpdate(s2);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
     }
 
@@ -52,7 +54,7 @@ public class Database extends org.sqlite.JDBC {
             pstmt.executeUpdate();
             stmt.executeUpdate(sql2);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
     }
 
@@ -65,7 +67,7 @@ public class Database extends org.sqlite.JDBC {
             System.out.println("find- " + res);
             return res;
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
         return -1;
     }
@@ -79,7 +81,7 @@ public class Database extends org.sqlite.JDBC {
             System.out.println("find- " + res);
             return res;
         } catch (SQLException e) {
-            System.out.println("->getUserID error - " + e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
         return -1;
     }
@@ -140,7 +142,7 @@ public class Database extends org.sqlite.JDBC {
             stmt.executeUpdate(s3);
             return true;
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
             return false;
         }
     }
@@ -156,7 +158,7 @@ public class Database extends org.sqlite.JDBC {
             addMessageToWhoSend(p);//add message to who sended
             stmt.executeUpdate(s);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
     }
 
@@ -170,7 +172,7 @@ public class Database extends org.sqlite.JDBC {
         try (Connection conn = this.connect(); Statement stmt = conn.createStatement()) {
             stmt.executeUpdate(s);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
     }
 
@@ -194,7 +196,7 @@ public class Database extends org.sqlite.JDBC {
                 list.add(new Protocol_v1(id, from_user, to_user, message, time));
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
         return list;
     }
@@ -209,7 +211,7 @@ public class Database extends org.sqlite.JDBC {
             System.out.println(s);
             stmt.executeUpdate(s);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
     }
 
@@ -223,7 +225,7 @@ public class Database extends org.sqlite.JDBC {
             System.out.println(s);
             stmt.executeUpdate(s);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
     }
 
@@ -238,7 +240,7 @@ public class Database extends org.sqlite.JDBC {
             System.out.println("friendCount- " + res);
             return res;
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
         return -1;
     }
@@ -258,7 +260,7 @@ public class Database extends org.sqlite.JDBC {
                 return true;
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
         return false;
     }
@@ -277,7 +279,7 @@ public class Database extends org.sqlite.JDBC {
             stmt.executeUpdate(s);
             System.out.println("set HIDE- " + s);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
     }
 
@@ -290,7 +292,7 @@ public class Database extends org.sqlite.JDBC {
             System.out.println(s);
             stmt.executeUpdate(s);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
     }
 
@@ -306,7 +308,7 @@ public class Database extends org.sqlite.JDBC {
             System.out.println("CountNotSendedMessages- " + res);
             return res;
         } catch (SQLException e) {
-            System.out.println("ERROR getCountNotSendedMessages - " + e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
         return -1;
     }
@@ -323,7 +325,7 @@ public class Database extends org.sqlite.JDBC {
             System.out.println("CountMessages- " + res);
             return res;
         } catch (SQLException e) {
-            System.out.println("ERROR getCountMessages - " + e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
         return -1;
     }
@@ -341,7 +343,7 @@ public class Database extends org.sqlite.JDBC {
             System.out.println("friendname- " + res);
             return res;
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Logger.getLogger(Database.class.getName()).log(Level.INFO, e.getMessage());
         }
         return "";
     }

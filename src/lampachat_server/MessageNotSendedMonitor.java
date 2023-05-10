@@ -55,7 +55,7 @@ public class MessageNotSendedMonitor implements Runnable {
                 System.out.println("pause (" + userName + ")");
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
-                System.out.println("MesNotSendMonitor ERROR(" + userName + ")");
+                Logger.getLogger(MessageNotSendedMonitor.class.getName()).log(Level.INFO, "MesNotSendMonitor ERROR(" + userName + ")" + ex.getMessage());
             }
         }
         System.out.println("MesNotSendMonitor END(" + userName + ")");

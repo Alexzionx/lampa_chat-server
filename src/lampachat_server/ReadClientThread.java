@@ -60,6 +60,7 @@ public class ReadClientThread implements Runnable {
                 }
             }
         } catch (NullPointerException e) {
+            Logger.getLogger(ReadClientThread.class.getName()).log(Level.INFO, e.getMessage());
             return false;
         }
         return true;
@@ -132,12 +133,13 @@ public class ReadClientThread implements Runnable {
                     try {
                         Thread.sleep(20000);//20 sec pause beth trying (aka ddos secure)
                     } catch (InterruptedException ex) {
+                        Logger.getLogger(ReadClientThread.class.getName()).log(Level.INFO, ex.getMessage());
                     }
                     continue;
                 }
                 break;//for exit from loop
             } catch (ClassNotFoundException | IOException ex) {
-                System.out.println(ex);
+                Logger.getLogger(ReadClientThread.class.getName()).log(Level.INFO, ex.getMessage());
                 self.interrupt();
             }
         }
@@ -161,7 +163,7 @@ public class ReadClientThread implements Runnable {
                                 writer.writeObject(new Protocol_v1(0, "", "", db.getAllUsersIsNotHide()));
                                 writer.flush();
                             } catch (SQLException ex) {
-                                System.out.println("err getUsers");
+                                Logger.getLogger(ReadClientThread.class.getName()).log(Level.INFO, "err getUsers" + ex.getMessage());
                             }
                             break;
                         case "add Contact":
@@ -232,7 +234,7 @@ public class ReadClientThread implements Runnable {
                 }
                 System.out.println("ReadThread end - " + this.hashCode());
             } catch (IOException | ClassNotFoundException ex) {
-                System.out.println("ReadThread Error");
+                Logger.getLogger(ReadClientThread.class.getName()).log(Level.INFO, ex.getMessage());
             }
         }
         System.out.println("ReadThread end 2 - " + this.hashCode());

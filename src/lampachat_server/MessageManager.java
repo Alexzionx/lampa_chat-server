@@ -27,11 +27,10 @@ public class MessageManager implements Runnable {
                 System.out.println("MessageManager RM message from buffer");
                 LampaChat_server.bufferArray.remove(0);
             }
-
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(MessageManager.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MessageManager.class.getName()).log(Level.INFO, ex.getMessage());
             }
         }
     }

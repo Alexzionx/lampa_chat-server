@@ -9,6 +9,8 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SendClientThread implements Runnable {
 
@@ -75,7 +77,7 @@ public class SendClientThread implements Runnable {
                 }
                 break;
             } catch (ClassNotFoundException | IOException ex) {
-                System.out.println("SendClientThread > " + ex);
+                Logger.getLogger(SendClientThread.class.getName()).log(Level.INFO, ex.getMessage());
                 tryCount--;
             }
         }
@@ -104,10 +106,11 @@ public class SendClientThread implements Runnable {
                         Thread.sleep(1000);
                         System.out.println("SendThread pause - user(" + userName + ")");
                     } catch (InterruptedException ex) {
+                        Logger.getLogger(SendClientThread.class.getName()).log(Level.INFO, ex.getMessage());
                     }
                 }
             } catch (IOException ex) {
-                System.out.print("SendThread ERROR - user(" + userName + ")");
+                Logger.getLogger(SendClientThread.class.getName()).log(Level.INFO, "SendThread ERROR - user(" + userName + ")" + ex.getMessage());
             }
             LampaChat_server.usersOnlinelist.remove(userID);
         }

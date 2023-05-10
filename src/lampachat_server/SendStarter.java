@@ -3,6 +3,8 @@ package lampachat_server;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SendStarter implements Runnable {
 
@@ -29,7 +31,7 @@ public class SendStarter implements Runnable {
                     new SendClientThread(sock).setupAndRun();
                 }
             } catch (IOException ex) {
-                System.out.println("SendStarter ERROR");
+                Logger.getLogger(SendStarter.class.getName()).log(Level.INFO, ex.getMessage());
             }
         }
         System.out.println("SendStarter END");

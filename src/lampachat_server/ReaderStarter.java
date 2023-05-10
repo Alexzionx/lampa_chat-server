@@ -3,6 +3,8 @@ package lampachat_server;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ReaderStarter implements Runnable {
 
@@ -10,8 +12,8 @@ public class ReaderStarter implements Runnable {
     private int port;
     private Options opt;
 
-    public ReaderStarter(int port,Options opt) {
-        this.opt=opt;
+    public ReaderStarter(int port, Options opt) {
+        this.opt = opt;
         this.self = new Thread(this);
         this.port = port;
         self.start();
@@ -33,7 +35,7 @@ public class ReaderStarter implements Runnable {
                     new ReadClientThread(sock, opt).setupAndRun();
                 }
             } catch (IOException ex) {
-                System.out.println("ReaderStarter ERROR");
+                Logger.getLogger(ReaderStarter.class.getName()).log(Level.INFO, ex.getMessage());
             }
         }
         System.out.println("ReaderStarter END");
